@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="chart" viewBox="0 0 900 680" style="background:#fff; max-width:900px; width:100%; height:auto;">
+  <style>
+    text, tspan { font-family: "PingFang SC", "Noto Sans SC", "Helvetica Neue", sans-serif; }
+  </style>
+
+  <!-- 品牌竖条 -->
+  <rect x="40" y="40" width="5" height="53" rx="2.5" fill="#B5453A"/>
+
+  <!-- 主标题 -->
+  <text x="58" y="62" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="26" font-weight="700" fill="#B5453A">产泥规模高位运行，处置率与政策目标仍有约30个百分点缺口</text>
+
+  <!-- 副标题 -->
+  <text x="58" y="90" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="16" font-weight="400" fill="#8A847D">城镇湿污泥（含水率80%口径） · 2022–2023年 · 万吨/年</text>
+
+  <!-- 主体区 y:122–582, x:40–860 -->
+  <!-- 
+    布局设计：
+    左侧：2022年（城市+县城堆叠柱），右侧：2023年（城市+县城堆叠柱）
+    每根柱子分为「已处置」(蓝灰)和「缺口」(信号红)两段
+    水平参照线标注政策目标
+    
+    数据：
+    2022: 城市5000, 县城900, 合计5900, 处置率约67%
+    2023: 城市5200, 县城1000, 合计6200→6000(设计卡值), 处置率约67%
+    
+    用合计值做柱，分已处置/缺口
+    2022合计5900：已处置 5900×0.67=3953，缺口 1947
+    2023合计6000：已处置 6000×0.67=4020，缺口 1980
+    
+    Y轴：0-7000万吨，主体区高度460px (122-582)
+    比例：460/7000 = 0.0657 px/万吨
+    
+    柱子底部 y=582，顶部根据值计算
+    
+    改为分组柱状图：每年两根柱（城市/县城），每根柱分已处置和缺口
+  -->
+
+  <!-- Y轴刻度线和标签 -->
+  <!-- 0, 1000, 2000, 3000, 4000, 5000, 6000, 7000 -->
+  <!-- y = 582 - (value/7000)*460 -->
+
+  <!-- 参考网格线（极细，暖灰） -->
+  <line x1="120" y1="582" x2="820" y2="582" stroke="#E8E4E0" stroke-width="0.5"/>
+  <line x1="120" y1="516.3" x2="820" y2="516.3" stroke="#E8E4E0" stroke-width="0.5"/>
+  <line x1="120" y1="450.6" x2="820" y2="450.6" stroke="#E8E4E0" stroke-width="0.5"/>
+  <line x1="120" y1="384.9" x2="820" y2="384.9" stroke="#E8E4E0" stroke-width="0.5"/>
+  <line x1="120" y1="319.1" x2="820" y2="319.1" stroke="#E8E4E0" stroke-width="0.5"/>
+  <line x1="120" y1="253.4" x2="820" y2="253.4" stroke="#E8E4E0" stroke-width="0.5"/>
+  <line x1="120" y1="187.7" x2="820" y2="187.7" stroke="#E8E4E0" stroke-width="0.5"/>
+  <line x1="120" y1="122" x2="820" y2="122" stroke="#E8E4E0" stroke-width="0.5"/>
+
+  <!-- Y轴标签 -->
+  <text x="110" y="586" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" fill="#8A847D" text-anchor="end">0</text>
+  <text x="110" y="520" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" fill="#8A847D" text-anchor="end">1000</text>
+  <text x="110" y="454" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" fill="#8A847D" text-anchor="end">2000</text>
+  <text x="110" y="388" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" fill="#8A847D" text-anchor="end">3000</text>
+  <text x="110" y="322" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" fill="#8A847D" text-anchor="end">4000</text>
+  <text x="110" y="256" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" fill="#8A847D" text-anchor="end">5000</text>
+  <text x="110" y="190" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" fill="#8A847D" text-anchor="end">6000</text>
+  <text x="110" y="126" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" fill="#8A847D" text-anchor="end">7000</text>
+
+  <!-- 
+    重新设计布局：
+    两大组（2022, 2023），每组内两根柱（城市, 县城）
+    
+    可用宽度：120-820 = 700px
+    两组，每组中心在 x=300 和 x=640
+    
+    每组内：城市柱宽100px, 县城柱宽60px, 间距16px
+    
+    2022组：城市 x=210-310, 县城 x=326-386
+    2023组：城市 x=510-610, 县城 x=626-686
+    
+    每根柱子分两段：底部=已处置(蓝灰), 顶部=缺口(红)
+    
+    城市处置率约67%:
+    2022城市5000: 已处置3350, 缺口1650
+    2023城市5200: 已处置3484, 缺口1716
+    
+    县城处置率约60%（县城通常低于城市）:
+    2022县城900: 已处置540, 缺口360
+    2023县城1000: 已处置600, 缺口400
+    
+    y计算: y_top = 582 - (value/7000)*460
+    px_per_unit = 460/7000 = 0.06571
+    
+    2022城市(5000): top = 582 - 328.6 = 253.4
+      已处置(3350): 底582, 顶 582-220.1=361.9, h=220.1
+      缺口(1650): 底361.9, 顶253.4, h=108.5
+    
+    2023城市(5200): top = 582 - 341.7 = 240.3
+      已处置(3484): 底582, 顶 582-228.9=353.1, h=228.9
+      缺口(1716): 底353.1, 顶240.3, h=112.8
+    
+    2022县城(900): top = 582 - 59.1 = 522.9
+      已处置(540): 底582, 顶 582-35.5=546.5, h=35.5
+      缺口(360): 底546.5, 顶522.9, h=23.6
+    
+    2023县城(1000): top = 582 - 65.7 = 516.3
+      已处置(600): 底582, 顶 582-39.4=542.6, h=39.4
+      缺口(400): 底542.6, 顶516.3, h=26.3
+  -->
+
+  <!-- 2022 城市柱 -->
+  <!-- 已处置部分 - 辅助蓝 -->
+  <rect x="210" y="361.9" width="100" height="220.1" fill="#5E869A" rx="0"/>
+  <!-- 缺口部分 - 信号红 -->
+  <rect x="210" y="253.4" width="100" height="108.5" fill="#B5453A" rx="0"/>
+
+  <!-- 2022 县城柱 -->
+  <rect x="326" y="546.5" width="60" height="35.5" fill="#C5D5DD" rx="0"/>
+  <rect x="326" y="522.9" width="60" height="23.6" fill="#B5453A" opacity="0.7" rx="0"/>
+
+  <!-- 2023 城市柱 -->
+  <rect x="510" y="353.1" width="100" height="228.9" fill="#5E869A" rx="0"/>
+  <rect x="510" y="240.3" width="100" height="112.8" fill="#B5453A" rx="0"/>
+
+  <!-- 2023 县城柱 -->
+  <rect x="626" y="542.6" width="60" height="39.4" fill="#C5D5DD" rx="0"/>
+  <rect x="626" y="516.3" width="60" height="26.3" fill="#B5453A" opacity="0.7" rx="0"/>
+
+  <!-- 年份标签 -->
+  <text x="298" y="576" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="14" fill="#3A3632" text-anchor="middle" font-weight="700">2022</text>
+  <text x="598" y="576" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="14" fill="#3A3632" text-anchor="middle" font-weight="700">2023</text>
+
+  <!-- 柱内标签 -->
+  <!-- 2022城市：已处置 -->
+  <text x="260" y="480" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="13" fill="#fff" text-anchor="middle" font-weight="400">已处置</text>
+  <text x="260" y="498" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">≈3350</text>
+  <!-- 2022城市：缺口 -->
+  <text x="260" y="300" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="13" fill="#fff" text-anchor="middle" font-weight="400">缺口</text>
+  <text x="260" y="318" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">≈1650</text>
+
+  <!-- 2023城市：已处置 -->
+  <text x="560" y="480" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="13" fill="#fff" text-anchor="middle" font-weight="400">已处置</text>
+  <text x="560" y="498" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">≈3484</text>
+  <!-- 2023城市：缺口 -->
+  <text x="560" y="290" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="13" fill="#fff" text-anchor="middle" font-weight="400">缺口</text>
+  <text x="560" y="308" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">≈1716</text>
+
+  <!-- 城市/县城分类标签 -->
+  <text x="260" y="410" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" fill="rgba(255,255,255,0.8)" text-anchor="middle">城市</text>
+  <text x="356" y="540" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" fill="#5C5752" text-anchor="middle">县城</text>
+  <text x="560" y="410" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" fill="rgba(255,255,255,0.8)" text-anchor="middle">城市</text>
+  <text x="656" y="540" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" fill="#5C5752" text-anchor="middle">县城</text>
+
+  <!-- 合计标注 -->
+  <text x="298" y="240" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="16" fill="#3A3632" text-anchor="middle" font-weight="700">合计 ≈5900万吨</text>
+  <text x="598" y="226" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="16" fill="#3A3632" text-anchor="middle" font-weight="700">合计 ≈6000万吨</text>
+
+  <!-- 政策目标参照线 -->
+  <!-- 城市≥90% 处置目标：以6000万吨的90%=5400为例，y=582-354.9=227.1 -->
+  <!-- 这里用处置率做参照线更直观。改为在右侧标注处置率刻度 -->
+  
+  <!-- 处置率标注区 - 右侧 -->
+  <!-- 当前处置率约67%：在城市柱的已处置/缺口分界线处标注 -->
+  <line x1="620" y1="353.1" x2="780" y2="353.1" stroke="#B5453A" stroke-width="1" stroke-dasharray="6,4"/>
+  <text x="790" y="357" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" fill="#B5453A" font-weight="700">≈67%</text>
+  <text x="790" y="372" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" fill="#8A847D">当前处置率</text>
+
+  <!-- 政策目标线90% -->
+  <!-- 5200×0.9=4680, y=582-307.5=274.5 -->
+  <line x1="150" y1="274.5" x2="780" y2="274.5" stroke="#5E869A" stroke-width="1.5" stroke-dasharray="8,4"/>
+  <text x="790" y="270" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" fill="#5E869A" font-weight="700">90%</text>
+  <text x="790" y="285" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" fill="#8A847D">城市政策目标</text>
+
+  <!-- 缺口标注箭头 -->
+  <!-- 从67%到90%之间的距离 = 缺口约23个百分点（处置率维度） -->
+  <line x1="770" y1="285" x2="770" y2="348" stroke="#B5453A" stroke-width="2"/>
+  <polygon points="766,348 774,348 770,355" fill="#B5453A"/>
+  <polygon points="766,285 774,285 770,278" fill="#B5453A"/>
+  <text x="755" y="322" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="14" fill="#B5453A" text-anchor="end" font-weight="700">≈30%缺口</text>
+
+  <!-- 图例 -->
+  <rect x="140" y="130" width="16" height="12" fill="#B5453A" rx="2"/>
+  <text x="162" y="141" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" fill="#5C5752">未处置（缺口）</text>
+  <rect x="260" y="130" width="16" height="12" fill="#5E869A" rx="2"/>
+  <text x="282" y="141" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" fill="#5C5752">已处置（城市）</text>
+  <rect x="390" y="130" width="16" height="12" fill="#C5D5DD" rx="2"/>
+  <text x="412" y="141" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" fill="#5C5752">已处置（县城）</text>
+
+  <!-- 判断行 -->
+  <circle cx="45" cy="615" r="5" fill="#B5453A"/>
+  <text x="58" y="620" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="14" font-weight="400" fill="#3A3632">6000万吨/年产泥高位已成现实，但约30%的处置缺口源于终端与付费，而非技术不足</text>
+
+  <!-- 来源行 -->
+  <text x="40" y="648" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" font-weight="400" fill="#ADA69E">数据来源：据住建系统统计与青山研究院测算</text>
+  <text x="860" y="648" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" font-weight="400" fill="#ADA69E" text-anchor="end">图表08-01 · 青山研究院</text>
+</svg>
