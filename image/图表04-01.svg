@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="chart" viewBox="0 0 900 680" width="900" height="680">
+<style>
+  text, tspan { font-family: "PingFang SC", "Noto Sans SC", "Helvetica Neue", sans-serif; }
+</style>
+<!-- 背景 -->
+<rect width="900" height="680" fill="#FFFFFF"/>
+<!-- 品牌竖条 -->
+<rect x="40" y="40" width="5" height="53" rx="2.5" fill="#B5453A"/>
+<!-- 主标题 -->
+<text x="58" y="62" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="26" font-weight="700" fill="#B5453A">处理率逼近天花板，集中收集率缺口暴露存量时代核心矛盾</text>
+<!-- 副标题 -->
+<text x="58" y="90" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="16" font-weight="400" fill="#8A847D">全国城市口径 · 2020–2023年 · %</text>
+
+<!-- 主体区: x∈[40,860], y∈[122,582] -->
+<!-- 图表区域: 左侧留Y轴标签空间 -->
+
+<!-- 100%天花板参考线 -->
+<line x1="120" y1="148" x2="780" y2="148" stroke="#D6D2CD" stroke-width="1" stroke-dasharray="6,4"/>
+<text x="108" y="152" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" fill="#8A847D" text-anchor="end">100%</text>
+
+<!-- Y轴刻度线 -->
+<line x1="120" y1="252" x2="780" y2="252" stroke="#E8E4E0" stroke-width="0.5"/>
+<text x="108" y="256" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" fill="#8A847D" text-anchor="end">90%</text>
+
+<line x1="120" y1="356" x2="780" y2="356" stroke="#E8E4E0" stroke-width="0.5"/>
+<text x="108" y="360" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" fill="#8A847D" text-anchor="end">80%</text>
+
+<line x1="120" y1="460" x2="780" y2="460" stroke="#E8E4E0" stroke-width="0.5"/>
+<text x="108" y="464" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" fill="#8A847D" text-anchor="end">70%</text>
+
+<line x1="120" y1="564" x2="780" y2="564" stroke="#E8E4E0" stroke-width="0.5"/>
+<text x="108" y="568" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" fill="#8A847D" text-anchor="end">60%</text>
+
+<!-- Y轴: 60%=y564, 100%=y148, scale=(564-148)/40=10.4px per % -->
+<!-- X轴: 2020=x200, 2021=x393, 2022=x587, 2023=x780 -->
+
+<!-- X轴年份 -->
+<text x="200" y="580" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="14" fill="#5C5752" text-anchor="middle">2020</text>
+<text x="393" y="580" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="14" fill="#5C5752" text-anchor="middle">2021</text>
+<text x="587" y="580" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="14" fill="#5C5752" text-anchor="middle">2022</text>
+<text x="780" y="580" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="14" fill="#5C5752" text-anchor="middle">2023</text>
+
+<!-- 处理率: 97.53→97.89→98.11→98.69 -->
+<!-- y = 564 - (value-60)*10.4 -->
+<!-- 97.53: y=564-(37.53*10.4)=564-390.3=173.7≈174 -->
+<!-- 97.89: y=564-(37.89*10.4)=564-394.1=169.9≈170 -->
+<!-- 98.11: y=564-(38.11*10.4)=564-396.3=167.7≈168 -->
+<!-- 98.69: y=564-(38.69*10.4)=564-402.4=161.6≈162 -->
+
+<!-- 集中收集率: —→68.6→70.06→73.63 -->
+<!-- 68.6: y=564-(8.6*10.4)=564-89.4=474.6≈475 -->
+<!-- 70.06: y=564-(10.06*10.4)=564-104.6=459.4≈459 -->
+<!-- 73.63: y=564-(13.63*10.4)=564-141.8=422.2≈422 -->
+
+<!-- 缺口填充区域 (2021-2023之间两条线围成的面积) -->
+<polygon points="393,170 587,168 780,162 780,422 587,459 393,475" fill="#F3E0DD" opacity="0.5"/>
+
+<!-- 缺口标注 -->
+<text x="587" y="320" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="16" font-weight="700" fill="#B5453A" text-anchor="middle" opacity="0.7">系统缺口</text>
+<text x="587" y="342" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="13" fill="#B5453A" text-anchor="middle" opacity="0.6">≈26个百分点</text>
+
+<!-- 处理率折线 (信号红) -->
+<polyline points="200,174 393,170 587,168 780,162" fill="none" stroke="#B5453A" stroke-width="2.5"/>
+<!-- 处理率数据点 -->
+<circle cx="200" cy="174" r="4" fill="#B5453A"/>
+<circle cx="393" cy="170" r="4" fill="#B5453A"/>
+<circle cx="587" cy="168" r="4" fill="#B5453A"/>
+<circle cx="780" cy="162" r="4" fill="#B5453A"/>
+<!-- 处理率数据标签 -->
+<text x="200" y="162" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="13" font-weight="700" fill="#B5453A" text-anchor="middle">97.53%</text>
+<text x="780" y="150" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="13" font-weight="700" fill="#B5453A" text-anchor="middle">98.69%</text>
+
+<!-- 集中收集率折线 (辅助蓝) -->
+<polyline points="393,475 587,459 780,422" fill="none" stroke="#5E869A" stroke-width="2.5"/>
+<!-- 集中收集率数据点 -->
+<circle cx="393" cy="475" r="4" fill="#5E869A"/>
+<circle cx="587" cy="459" r="4" fill="#5E869A"/>
+<circle cx="780" cy="422" r="4" fill="#5E869A"/>
+<!-- 集中收集率数据标签 -->
+<text x="393" y="496" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="13" font-weight="700" fill="#5E869A" text-anchor="middle">68.6%</text>
+<text x="780" y="414" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="13" font-weight="700" fill="#5E869A" text-anchor="middle">73.63%</text>
+
+<!-- 图例 -->
+<circle cx="140" cy="130" r="5" fill="#B5453A"/>
+<text x="152" y="134" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="13" fill="#5C5752">污水处理率</text>
+<circle cx="290" cy="130" r="5" fill="#5E869A"/>
+<text x="302" y="134" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="13" fill="#5C5752">集中收集率</text>
+
+<!-- 处理能力柱状图 (灰色退场, 右侧Y轴) -->
+<!-- 柱宽40px, 高度按处理能力: 1.92→2.10→2.16→2.27 (亿m³/d) -->
+<!-- 映射到高度: max=2.27对应120px高度 -->
+<!-- 1.92: h=1.92/2.27*120=101.5≈102 -->
+<!-- 2.10: h=2.10/2.27*120=111.0≈111 -->
+<!-- 2.16: h=2.16/2.27*120=114.2≈114 -->
+<!-- 2.27: h=2.27/2.27*120=120 -->
+<rect x="180" y="462" width="40" height="102" rx="2" fill="#E8E4E0"/>
+<rect x="373" y="453" width="40" height="111" rx="2" fill="#E8E4E0"/>
+<rect x="567" y="450" width="40" height="114" rx="2" fill="#E8E4E0"/>
+<rect x="760" y="444" width="40" height="120" rx="2" fill="#E8E4E0"/>
+<!-- 柱顶标注 -->
+<text x="200" y="456" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" fill="#8A847D" text-anchor="middle">1.92亿</text>
+<text x="780" y="438" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" fill="#8A847D" text-anchor="middle">2.27亿</text>
+
+<!-- 右侧标注 -->
+<text x="840" y="540" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" fill="#8A847D" text-anchor="end">处理能力</text>
+<text x="840" y="554" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" fill="#8A847D" text-anchor="end">m³/d</text>
+
+<!-- 判断行 -->
+<circle cx="45" cy="615" r="5" fill="#B5453A"/>
+<text x="58" y="620" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="14" font-weight="400" fill="#3A3632">处理率与集中收集率之间26个百分点的缺口，是存量时代的核心矛盾</text>
+
+<!-- 来源行 -->
+<text x="40" y="648" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" font-weight="400" fill="#ADA69E">数据来源：住建部城市建设状况公报、国家发改委</text>
+<text x="860" y="648" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" font-weight="400" fill="#ADA69E" text-anchor="end">图表04-01 · 青山研究院</text>
+</svg>
