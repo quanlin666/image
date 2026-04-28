@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="chart" viewBox="0 0 900 680" style="background:#fff; max-width:900px; width:100%; height:auto;">
+  <style>
+    text, tspan { font-family: "PingFang SC", "Noto Sans SC", "Helvetica Neue", sans-serif; }
+  </style>
+
+  <!-- 品牌竖条 -->
+  <rect x="40" y="40" width="5" height="53" rx="2.5" fill="#B5453A"/>
+
+  <!-- 主标题 -->
+  <text x="58" y="62" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="26" font-weight="700" fill="#B5453A">四类主体进入方式不同，利润向「接口能力」持有者集中</text>
+
+  <!-- 副标题 -->
+  <text x="58" y="90" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="16" font-weight="400" fill="#8A847D">污泥处置市场主体 · 进入方式与风险对比</text>
+
+  <!-- 主体区 y:122–582, x:40–860 -->
+
+  <!--
+    布局设计：
+    左侧标注轴：利润集中方向箭头（↑高 ↓低）
+    四个区块从上到下排列：
+    1. 大型水务集团 - 最大，深色 (y=130-230)
+    2. 垃圾焚烧/能源运营商 - 大，深色 (y=250-340)
+    3. 专业污泥企业 - 较小，浅色 (y=375-440)
+    4. 设备技术企业 - 最小，浅色 (y=470-525)
+    
+    上方两个区块（利润高地）间距紧，与下方拉开 35px
+    下方两个区块间距也紧
+    
+    右侧标注关键特征
+  -->
+
+  <!-- 利润集中方向标注 -->
+  <line x1="55" y1="145" x2="55" y2="555" stroke="#D6D2CD" stroke-width="1"/>
+  <polygon points="51,145 59,145 55,135" fill="#B5453A"/>
+  <text x="55" y="130" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" font-weight="700" fill="#B5453A" text-anchor="middle">利润集中</text>
+  <polygon points="51,555 59,555 55,565" fill="#D6D2CD"/>
+  <text x="55" y="578" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" font-weight="400" fill="#8A847D" text-anchor="middle">利润薄</text>
+
+  <!-- ===== 区块 1: 大型水务集团 ===== -->
+  <rect x="80" y="140" width="470" height="105" rx="6" fill="#B5453A"/>
+  <text x="100" y="172" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="16" font-weight="700" fill="#fff">大型水务集团</text>
+  <text x="100" y="198" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="13" font-weight="400" fill="rgba(255,255,255,0.85)">一体化合同 · 标杆厂框架 · 按效付费</text>
+  <text x="100" y="220" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" font-weight="400" fill="rgba(255,255,255,0.7)">掌握来源+终端+追溯全链条接口</text>
+  <!-- 右侧标签 -->
+  <rect x="570" y="165" width="120" height="28" rx="14" fill="#F3E0DD"/>
+  <text x="630" y="184" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" font-weight="700" fill="#B5453A" text-anchor="middle">接口型 · 强</text>
+
+  <!-- ===== 区块 2: 垃圾焚烧/能源运营商 ===== -->
+  <rect x="80" y="261" width="420" height="92" rx="6" fill="#D6D2CD"/>
+  <text x="100" y="293" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="16" font-weight="700" fill="#3A3632">垃圾焚烧/能源运营商</text>
+  <text x="100" y="317" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="13" font-weight="400" fill="#5C5752">协同接口 · 增量收入 · 许可与排放为限制</text>
+  <text x="100" y="339" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" font-weight="400" fill="#8A847D">掌握终端处置接口，增量边际成本低</text>
+  <!-- 右侧标签 -->
+  <rect x="570" y="290" width="120" height="28" rx="14" fill="#F3F0EC"/>
+  <text x="630" y="309" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" font-weight="700" fill="#5C5752" text-anchor="middle">接口型 · 中</text>
+
+  <!-- 协同连接线：区块1 ↔ 区块2 -->
+  <line x1="300" y1="245" x2="300" y2="261" stroke="#B5453A" stroke-width="2.5"/>
+
+  <!-- ===== 间隔区（上方利润高地 vs 下方风险地带）===== -->
+  <line x1="80" y1="375" x2="690" y2="375" stroke="#E8E4E0" stroke-width="0.5" stroke-dasharray="6,4"/>
+  <text x="700" y="379" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="11" font-weight="400" fill="#ADA69E">↑ 利润高地　↓ 需绑定运营</text>
+
+  <!-- ===== 区块 3: 专业污泥企业 ===== -->
+  <rect x="80" y="395" width="340" height="76" rx="6" fill="#E8E4E0"/>
+  <text x="100" y="424" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="14" font-weight="700" fill="#3A3632">专业污泥企业</text>
+  <text x="100" y="448" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="13" font-weight="400" fill="#5C5752">重资产 · 退出成本高 · 区域打包</text>
+  <!-- 右侧标签 -->
+  <rect x="570" y="413" width="140" height="28" rx="14" fill="#F3F0EC"/>
+  <text x="640" y="432" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" font-weight="400" fill="#8A847D" text-anchor="middle">需绑定运营场景</text>
+
+  <!-- ===== 区块 4: 设备技术企业 ===== -->
+  <rect x="80" y="491" width="280" height="72" rx="6" fill="#F3F0EC"/>
+  <text x="100" y="519" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="14" font-weight="700" fill="#5C5752">设备技术企业</text>
+  <text x="100" y="543" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" font-weight="400" fill="#8A847D">场景绑定 · 现金流质量参差</text>
+  <!-- 数据标注 -->
+  <rect x="390" y="495" width="260" height="64" rx="6" fill="#F3F0EC"/>
+  <text x="400" y="516" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" font-weight="400" fill="#5C5752">中节能国祯 营收25.17亿/现金流3.63亿</text>
+  <text x="400" y="538" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" font-weight="400" fill="#5C5752">中电环保 营收5.23亿/现金流2.29亿</text>
+
+  <!-- 协同连接线：区块2 → 区块3 -->
+  <line x1="250" y1="353" x2="250" y2="395" stroke="#D6D2CD" stroke-width="1"/>
+  <!-- 协同连接线：区块3 → 区块4 -->
+  <line x1="200" y1="471" x2="200" y2="491" stroke="#E8E4E0" stroke-width="0.8"/>
+
+  <!-- 判断行 -->
+  <circle cx="45" cy="615" r="5" fill="#B5453A"/>
+  <text x="58" y="620" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="14" font-weight="400" fill="#3A3632">大型水务集团与焚烧运营商凭借接口优势占据利润高地，专业企业和设备商需绑定运营场景</text>
+
+  <!-- 来源行 -->
+  <text x="40" y="648" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" font-weight="400" fill="#ADA69E">数据来源：据公开财务数据、政策文件与行业调研整理</text>
+  <text x="860" y="648" font-family="PingFang SC, Noto Sans SC, Helvetica Neue, sans-serif" font-size="12" font-weight="400" fill="#ADA69E" text-anchor="end">图表08-05 · 青山研究院</text>
+</svg>
